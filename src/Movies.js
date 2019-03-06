@@ -9,7 +9,6 @@ class Movies extends Component {
 
 		let moviesView;
 		if(noMovie) {
-			console.log('here');
 			this.props.popularMovies();
 		} else {
 			moviesView = this.props.movies.map((movie, idx) => {
