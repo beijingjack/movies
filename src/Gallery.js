@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import GalleryMovies from "./GalleryMovies";
 
 class Gallery extends Component{
 	constructor(){
@@ -11,32 +12,23 @@ class Gallery extends Component{
 		this.baseUrl = 'https://api.themoviedb.org/3/';
 	}
 
-	popularMovies() {
-		const numberPages = 5;
-		const movies = this.state.movies;
+	async popularMovies() {
 		let url = `${this.baseUrl}movie/popular?api_key=57597e10d2a4be7b31ce5f3098929194&language=en-US&`;
-
-		for (var i=1; i<=numberPages; i++) {
-			let currUrl = `${url}page=${i}`;
-		}
-
-
-
-
-		// let url = `${this.baseUrl}movie/popular?api_key=57597e10d2a4be7b31ce5f3098929194&language=en-US`;
-		// axios.get(url).then((response) => {
-		// 	this.setState({
-		// 		movies: response.data.results
-		// 	});
-		// }).catch((error) => {
-		// 	console.log(error);
-		// });
+		let movies = [];
+		movies.push(await axios.get(`${url}page=1`).then((response) => response.data.results));
+		movies.push(await axios.get(`${url}page=2`).then((response) => response.data.results));
+		movies.push(await axios.get(`${url}page=3`).then((response) => response.data.results));
+		movies.push(await axios.get(`${url}page=4`).then((response) => response.data.results));
+		movies.push(await axios.get(`${url}page=5`).then((response) => response.data.results));
+		this.setState({
+			movies: movies
+		})
 	}
 
 	render() {
 		return(
 			<div>
-
+				<GalleryMovies movies={this.state.movies} popularMovies={this.popularMovies}/>
 			</div>
 		)
 	}
