@@ -9,7 +9,7 @@ class GalleryMovies extends Component {
 			this.props.popularMovies();
 		}
 		else{
-			moviesView = this.props.movies.map((movie, idx) => {
+			moviesView = this.props.display.map((movie, idx) => {
 				return (
 					<li key={idx}>
 						<Movie movie={movie}/>
