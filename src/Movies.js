@@ -3,14 +3,9 @@ import Movie from "./Movie";
 
 class Movies extends Component {
 	render() {
-		// if the props.movies is empty, display the popular movie list
-		//check if props.movies is empty, which means there's no search yet
-		const noMovie = this.props.movies.length === 0;
-
 		let moviesView;
-		if(noMovie) {
-			this.props.popularMovies();
-		} else {
+		const noMovie = this.props.movies.length === 0;
+		if(!noMovie){
 			moviesView = this.props.movies.map((movie, idx) => {
 				return (
 					<li key={idx}>
@@ -19,6 +14,7 @@ class Movies extends Component {
 				)
 			});
 		}
+
 		return (
 			<div>
 				{moviesView}

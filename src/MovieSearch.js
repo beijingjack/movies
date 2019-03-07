@@ -11,7 +11,6 @@ class MovieSearch extends Component {
 			movies: [],
 		};
 		this.inputChangeHandler = this.inputChangeHandler.bind(this);
-		this.popularMovies = this.popularMovies.bind(this);
 		this.latestClickHandler = this.latestClickHandler.bind(this);
 		this.oldestClickHandler = this.oldestClickHandler.bind(this);
 		this.baseUrl = 'https://api.themoviedb.org/3/';
@@ -27,17 +26,6 @@ class MovieSearch extends Component {
 			return
 		}
 		let url = `${this.baseUrl}search/movie?api_key=57597e10d2a4be7b31ce5f3098929194&language=en-US&query=${this.state.value}&include_adult=false`;
-		axios.get(url).then((response) => {
-			this.setState({
-				movies: response.data.results
-			});
-		}).catch((error) => {
-			console.log(error);
-		});
-	}
-
-	popularMovies() {
-		let url = `${this.baseUrl}movie/popular?api_key=57597e10d2a4be7b31ce5f3098929194&language=en-US`;
 		axios.get(url).then((response) => {
 			this.setState({
 				movies: response.data.results
@@ -84,12 +72,7 @@ class MovieSearch extends Component {
 					Sort From Oldest
 				</button>
 
-
-				<Movies
-					movies={this.state.movies}
-					value={this.state.value}
-					popularMovies={this.popularMovies}
-				/>
+				<Movies movies={this.state.movies}/>
 			</div>
 
 		);
