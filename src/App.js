@@ -1,25 +1,26 @@
 import React, { Component } from "react";
-import {Route, NavLink, HashRouter} from "react-router-dom";
+import {Route, NavLink, BrowserRouter, Switch} from "react-router-dom";
 import MovieSearch from './MovieSearch';
 import Gallery from './Gallery';
-import './App.css'
+import MovieDetail from "./MovieDetail";
 
 class App extends Component {
   render() {
     return (
-      <HashRouter>
+      <BrowserRouter>
         <div>
           <h1>Movie</h1>
           <ul className="header">
-            <li><NavLink exact  to="/">Search Movie</NavLink></li>
-            <li><NavLink exact  to="/gallery">Gallery</NavLink></li>
+            <li><NavLink exact to="/">Search Movie</NavLink></li>
+            <li><NavLink exact to="/gallery">Gallery</NavLink></li>
           </ul>
-          <div className="content">
+          <Switch>
             <Route exact path="/" component={MovieSearch}/>
             <Route exact path="/gallery" component={Gallery}/>
-          </div>
+            <Route exact path="/detail/:id" component={MovieDetail}/>
+          </Switch>
         </div>
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import Movies from './Movies'
-import './App.css';
+import { Button, Input} from 'semantic-ui-react'
 
 class MovieSearch extends Component {
 	constructor(){
@@ -59,18 +59,19 @@ class MovieSearch extends Component {
 		return (
 			<div>
 				<h2>Search Movies...</h2>
-				<input
+				<Input icon='search'
 					value={this.state.value}
 					placeholder='Search Movie Here...'
 					onChange={this.inputChangeHandler}
 				/>
-				<button onClick={this.latestClickHandler}>
+				<Button
+					onClick={this.latestClickHandler}>
 					Sort From Newest
-				</button>
+				</Button>
 
-				<button onClick={this.oldestClickHandler}>
+				<Button onClick={this.oldestClickHandler}>
 					Sort From Oldest
-				</button>
+				</Button>
 
 				<Movies movies={this.state.movies}/>
 			</div>
