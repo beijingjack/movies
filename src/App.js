@@ -6,6 +6,10 @@ import MovieDetail from "./MovieDetail";
 
 class App extends Component {
   render() {
+    window.currentMovies = {
+      movies: [],
+      currentMovieId: -1,
+    };
     return (
       <BrowserRouter>
         <div>

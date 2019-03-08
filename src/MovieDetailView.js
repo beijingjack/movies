@@ -4,8 +4,9 @@ class MovieDetailView extends Component {
   render() {
     let imageUrl;
     const noMovie = this.props.movie.length === 0;
-    if (noMovie) {
+    if (noMovie || window.currentMovies.currentMovieId !== this.props.id) {
       this.props.getMovie();
+      window.currentMovies.currentMovieId = this.props.id;
     }else {
       imageUrl = `https://image.tmdb.org/t/p/w300_and_h450_bestv2${this.props.movie.poster_path}`;
     }
@@ -16,8 +17,9 @@ class MovieDetailView extends Component {
           src={imageUrl}
           alt={`${this.props.movie.title}`}
         />
-        <h2>Rating : {this.props.movie.vote_average}</h2>
+        <h2>Popularity : {this.props.movie.popularity}</h2>
         <h3>{this.props.movie.overview}</h3>
+
       </div>
     )
   }

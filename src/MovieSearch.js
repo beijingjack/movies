@@ -55,7 +55,7 @@ class MovieSearch extends Component {
   }
 
   render() {
-    //let popularMovies = this.popularMovies();
+    window.currentMovies.movies = this.state.movies;
     return (
       <div>
         <h2>Search Movies...</h2>

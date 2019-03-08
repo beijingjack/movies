@@ -35,6 +35,7 @@ class Gallery extends Component{
   };
 
   render() {
+    window.currentMovies.movies = this.state.displayedMovies;
     return(
       <div>
         <Button onClick={() => this.filterGenre(999)}>All</Button>

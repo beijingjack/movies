@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import MovieDetailView from './MovieDetailView'
 import axios from "axios";
+import {Link} from "react-router-dom";
+import {Button} from "semantic-ui-react";
 
 class MovieDetail extends Component{
   constructor() {
@@ -21,12 +23,40 @@ class MovieDetail extends Component{
     })
   }
 
+  getNextMovieId() {
+    const currentMovies = window.currentMovies.movies;
+    const currentId = parseInt(this.props.match.params.id);
+    let nextIdx = currentMovies.findIndex((curr) => curr.id===currentId) + 1;
+    if (nextIdx === currentMovies.length) {nextIdx = 0}
+    return currentMovies[nextIdx].id;
+  }
+
+  getPrevMovieId() {
+    const currentMovies = window.currentMovies.movies;
+    const currentId = parseInt(this.props.match.params.id);
+    let prevIdx = currentMovies.findIndex((curr) => curr.id===currentId) - 1;
+    if (prevIdx < 0) {prevIdx = currentMovies.length-1}
+    return currentMovies[prevIdx].id;
+  }
+
   render() {
+    const prevMovieId = this.getPrevMovieId();
+    const nextMovieId = this.getNextMovieId();
     return(
-      <MovieDetailView
-        movie={this.state.movie}
-        getMovie={() => this.getMovie()}
-      />
+      <div>
+        <MovieDetailView
+          movie={this.state.movie}
+          getMovie={() => this.getMovie()}
+          id={this.props.match.params.id}
+        />
+        <br/>
+        <Link to={`/detail/${prevMovieId}`}>
+          <Button>Prev</Button>
+        </Link>
+        <Link to={`/detail/${nextMovieId}`}>
+          <Button>Prev</Button>
+        </Link>
+      </div>
     )
   }
 }
