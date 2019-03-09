@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Movie from "./Movie";
+import './App.scss'
 
 class GalleryMovies extends Component {
   render() {
@@ -19,7 +20,7 @@ class GalleryMovies extends Component {
     }
 
     return (
-      <div>
+      <div className="container">
         {moviesView}
       </div>
     )

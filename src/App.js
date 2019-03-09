@@ -3,6 +3,7 @@ import {Route, NavLink, BrowserRouter, Switch} from "react-router-dom";
 import MovieSearch from './MovieSearch';
 import Gallery from './Gallery';
 import MovieDetail from "./MovieDetail";
+import './App.css'
 
 class App extends Component {
   render() {
@@ -14,7 +15,7 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <h1>Movie</h1>
-          <ul className="header">
+          <ul className="container">
             <li><NavLink exact to="/">Search Movie</NavLink></li>
             <li><NavLink exact to="/gallery">Gallery</NavLink></li>
           </ul>

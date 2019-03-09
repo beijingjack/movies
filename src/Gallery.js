@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from "axios";
 import GalleryMovies from "./GalleryMovies";
 import { Button} from 'semantic-ui-react'
+import './App.css'
+
 
 
 class Gallery extends Component{
@@ -38,27 +40,28 @@ class Gallery extends Component{
     window.currentMovies.movies = this.state.displayedMovies;
     return(
       <div>
-        <Button onClick={() => this.filterGenre(999)}>All</Button>
-        <Button onClick={() => this.filterGenre(28)}>Action</Button>
-        <Button onClick={() => this.filterGenre(12)}>Adventure</Button>
-        <Button onClick={() => this.filterGenre(16)}>Animation</Button>
-        <Button onClick={() => this.filterGenre(35)}>Comedy</Button>
-        <Button onClick={() => this.filterGenre(80)}>Crime</Button>
-        <Button onClick={() => this.filterGenre(99)}>Documentary</Button>
-        <Button onClick={() => this.filterGenre(18)}>Drama</Button>
-        <Button onClick={() => this.filterGenre(10751)}>Family</Button>
-        <Button onClick={() => this.filterGenre(14)}>Fantasy</Button>
-        <Button onClick={() => this.filterGenre(36)}>History</Button>
-        <Button onClick={() => this.filterGenre(27)}>Horror</Button>
-        <Button onClick={() => this.filterGenre(10402)}>Music</Button>
-        <Button onClick={() => this.filterGenre(9648)}>Mystery</Button>
-        <Button onClick={() => this.filterGenre(10749)}>Romance</Button>
-        <Button onClick={() => this.filterGenre(878)}>Science Fiction</Button>
-        <Button onClick={() => this.filterGenre(10770)}>TV Movie</Button>
-        <Button onClick={() => this.filterGenre(53)}>Thriller</Button>
-        <Button onClick={() => this.filterGenre(10752)}>War</Button>
-        <Button onClick={() => this.filterGenre(37)}>Western</Button>
-
+        <div className="container">
+          <Button onClick={() => this.filterGenre(999)}>All</Button>
+          <Button onClick={() => this.filterGenre(28)}>Action</Button>
+          <Button onClick={() => this.filterGenre(12)}>Adventure</Button>
+          <Button onClick={() => this.filterGenre(16)}>Animation</Button>
+          <Button onClick={() => this.filterGenre(35)}>Comedy</Button>
+          <Button onClick={() => this.filterGenre(80)}>Crime</Button>
+          <Button onClick={() => this.filterGenre(99)}>Documentary</Button>
+          <Button onClick={() => this.filterGenre(18)}>Drama</Button>
+          <Button onClick={() => this.filterGenre(10751)}>Family</Button>
+          <Button onClick={() => this.filterGenre(14)}>Fantasy</Button>
+          <Button onClick={() => this.filterGenre(36)}>History</Button>
+          <Button onClick={() => this.filterGenre(27)}>Horror</Button>
+          <Button onClick={() => this.filterGenre(10402)}>Music</Button>
+          <Button onClick={() => this.filterGenre(9648)}>Mystery</Button>
+          <Button onClick={() => this.filterGenre(10749)}>Romance</Button>
+          <Button onClick={() => this.filterGenre(878)}>Science Fiction</Button>
+          <Button onClick={() => this.filterGenre(10770)}>TV Movie</Button>
+          <Button onClick={() => this.filterGenre(53)}>Thriller</Button>
+          <Button onClick={() => this.filterGenre(10752)}>War</Button>
+          <Button onClick={() => this.filterGenre(37)}>Western</Button>
+        </div>
         <GalleryMovies
           movies={this.state.allMovies}
           popularMovies={this.popularMovies}

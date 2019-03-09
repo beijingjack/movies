@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {Rating} from "semantic-ui-react";
+
 
 class MovieDetailView extends Component {
   render() {
@@ -19,6 +21,8 @@ class MovieDetailView extends Component {
         />
         <h2>Popularity : {this.props.movie.popularity}</h2>
         <h3>{this.props.movie.overview}</h3>
+
+        <Rating maxRating={5} defaultRating={3} icon='star' size='huge' />
 
       </div>
     )

@@ -16,7 +16,7 @@ class Movies extends Component {
     }
 
     return (
-      <div>
+      <div className="container">
         {moviesView}
       </div>
     )

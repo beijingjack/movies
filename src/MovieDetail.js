@@ -51,10 +51,10 @@ class MovieDetail extends Component{
         />
         <br/>
         <Link to={`/detail/${prevMovieId}`}>
-          <Button>Prev</Button>
+          <Button size="big">Prev</Button>
         </Link>
         <Link to={`/detail/${nextMovieId}`}>
-          <Button>Prev</Button>
+          <Button size="big">Next</Button>
         </Link>
       </div>
     )
