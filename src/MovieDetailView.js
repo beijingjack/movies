@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Rating} from "semantic-ui-react";
+import PropTypes from 'prop-types';
 
 
 class MovieDetailView extends Component {
@@ -20,7 +21,7 @@ class MovieDetailView extends Component {
           alt={`${this.props.movie.title}`}
         />
         <h2>Popularity : {this.props.movie.popularity}</h2>
-        <h3>{this.props.movie.overview}</h3>
+        <h2>{this.props.movie.overview}</h2>
 
         <Rating maxRating={5} defaultRating={3} icon='star' size='huge' />
 
@@ -29,5 +30,12 @@ class MovieDetailView extends Component {
   }
 
 }
+
+MovieDetailView.propTypes = {
+  poster_path: PropTypes.string,
+  id: PropTypes.number,
+  title: PropTypes.string,
+  popularity: PropTypes.number
+};
 
 export default MovieDetailView

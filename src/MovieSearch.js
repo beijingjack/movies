@@ -58,17 +58,17 @@ class MovieSearch extends Component {
     window.currentMovies.movies = this.state.movies;
     return (
       <div>
-        <Input icon='search' size='big'
+        <Input icon='search'
                value={this.state.value}
                placeholder='Search Movie Here...'
                onChange={this.inputChangeHandler}
         />
-        <Button size='big'
+        <Button
           onClick={this.latestClickHandler}>
           Sort From Newest
         </Button>
 
-        <Button size='big'
+        <Button
           onClick={this.oldestClickHandler}>
           Sort From Oldest
         </Button>

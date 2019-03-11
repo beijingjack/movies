@@ -4,6 +4,7 @@ import MovieSearch from './MovieSearch';
 import Gallery from './Gallery';
 import MovieDetail from "./MovieDetail";
 import './App.css'
+import {Button} from "semantic-ui-react";
 
 class App extends Component {
   render() {
@@ -15,10 +16,11 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <h1>Movie</h1>
-          <ul className="container">
-            <li><NavLink exact to="/">Search Movie</NavLink></li>
-            <li><NavLink exact to="/gallery">Gallery</NavLink></li>
-          </ul>
+          <div className="container">
+            <Button color="youtube" size="large"><NavLink className="link" exact to="/">Search</NavLink></Button>
+            <Button color="youtube" size="large"><NavLink className="link" exact to="/gallery">Gallery</NavLink></Button>
+          </div>
+          <br/>
           <Switch>
             <Route exact path="/" component={MovieSearch}/>
             <Route exact path="/gallery" component={Gallery}/>

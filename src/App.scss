@@ -22,7 +22,16 @@ li {
 Button {
   padding: $padding-size;
 }
+
 img:hover{
   opacity: $opacity-value;
   transition: 0.4s;
+}
+
+.link{
+  color: white;
+  font-size: $big-size;
+}
+.link:hover{
+  color: white;
 }

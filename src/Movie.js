@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types';
+
 
 class Movie extends React.Component {
   render() {
@@ -15,5 +17,9 @@ class Movie extends React.Component {
     );
   }
 }
+
+Movie.propTypes = {
+  poster_path: PropTypes.string
+};
 
 export default Movie

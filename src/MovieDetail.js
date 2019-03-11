@@ -3,6 +3,8 @@ import MovieDetailView from './MovieDetailView'
 import axios from "axios";
 import {Link} from "react-router-dom";
 import {Button} from "semantic-ui-react";
+import PropTypes from 'prop-types';
+
 
 class MovieDetail extends Component{
   constructor() {
@@ -60,5 +62,9 @@ class MovieDetail extends Component{
     )
   }
 }
+
+MovieDetailView.propTypes = {
+  id: PropTypes.string
+};
 
 export default MovieDetail

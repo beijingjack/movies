@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Movie from "./Movie";
+import PropTypes from 'prop-types';
+
 
 class Movies extends Component {
   render() {
@@ -22,5 +24,9 @@ class Movies extends Component {
     )
   }
 }
+
+Movies.propTypes = {
+  movies: PropTypes.arrayOf(PropTypes.object),
+};
 
 export default Movies
