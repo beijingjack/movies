@@ -17,8 +17,8 @@ class App extends Component {
         <div>
           <h1>Movie</h1>
           <div className="container">
-            <Button color="youtube" size="large"><NavLink className="link" exact to="/">Search</NavLink></Button>
-            <Button color="youtube" size="large"><NavLink className="link" exact to="/gallery">Gallery</NavLink></Button>
+            <Button color="youtube" size="large"><NavLink className="link" to="/">Search</NavLink></Button>
+            <Button color="youtube" size="large"><NavLink className="link" to="/gallery">Gallery</NavLink></Button>
           </div>
           <br/>
           <Switch>
