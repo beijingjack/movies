@@ -2,7 +2,7 @@
   "name": "mp2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://beijingjack.gitlab.io/cs498-mp2/",
+  "homepage": "https://beijingjack.gitlab.io/movies/",
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.8.3",
