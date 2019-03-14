@@ -25,8 +25,18 @@ class MovieDetail extends Component{
     })
   }
 
+  componentDidMount() {
+    this.getMovie();
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if(this.props.match.params.id !== prevProps.match.params.id) {
+      this.getMovie();
+    }
+  }
+
   getNextMovieId() {
-    const currentMovies = window.currentMovies.movies;
+    const currentMovies = this.props.location.state.movies;
     const currentId = parseInt(this.props.match.params.id);
     let nextIdx = currentMovies.findIndex((curr) => curr.id===currentId) + 1;
     if (nextIdx === currentMovies.length) {nextIdx = 0}
@@ -34,7 +44,7 @@ class MovieDetail extends Component{
   }
 
   getPrevMovieId() {
-    const currentMovies = window.currentMovies.movies;
+    const currentMovies = this.props.location.state.movies;
     const currentId = parseInt(this.props.match.params.id);
     let prevIdx = currentMovies.findIndex((curr) => curr.id===currentId) - 1;
     if (prevIdx < 0) {prevIdx = currentMovies.length-1}
@@ -52,10 +62,16 @@ class MovieDetail extends Component{
           id={this.props.match.params.id}
         />
         <br/>
-        <Link to={`/detail/${prevMovieId}`}>
+        <Link to={{
+          pathname:`/detail/${prevMovieId}`,
+          state: {movies:this.props.location.state.movies}
+        }}>
           <Button size="big">Prev</Button>
         </Link>
-        <Link to={`/detail/${nextMovieId}`}>
+        <Link to={{
+          pathname:`/detail/${nextMovieId}`,
+          state: {movies:this.props.location.state.movies}
+        }}>
           <Button size="big">Next</Button>
         </Link>
       </div>

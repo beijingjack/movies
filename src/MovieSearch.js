@@ -55,7 +55,6 @@ class MovieSearch extends Component {
   }
 
   render() {
-    window.currentMovies.movies = this.state.movies;
     return (
       <div>
         <Input icon='search'

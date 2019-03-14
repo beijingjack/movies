@@ -14,7 +14,10 @@ class GalleryMovies extends Component {
       moviesView = this.props.display.map((movie, idx) => {
         return (
           <li key={idx}>
-            <Movie movie={movie}/>
+            <Movie
+              movie={movie}
+              movies={this.props.display}
+            />
           </li>
         )
       });

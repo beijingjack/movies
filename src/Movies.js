@@ -11,7 +11,10 @@ class Movies extends Component {
       moviesView = this.props.movies.map((movie, idx) => {
         return (
           <li key={idx}>
-            <Movie movie={movie}/>
+            <Movie
+              movie={movie}
+              movies={this.props.movies}
+            />
           </li>
         )
       });

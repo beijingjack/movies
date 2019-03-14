@@ -8,17 +8,13 @@ import {Button} from "semantic-ui-react";
 
 class App extends Component {
   render() {
-    window.currentMovies = {
-      movies: [],
-      currentMovieId: -1,
-    };
     return (
       <BrowserRouter>
         <div>
           <h1>Movie</h1>
           <div className="container">
             <Button color="youtube" size="large"><NavLink className="link" to="/">Search</NavLink></Button>
-            <Button color="youtube" size="large"><NavLink className="link" to="/gallery">Gallery</NavLink></Button>
+            <Button color="youtube" size="large"><NavLink className="link"  to="/gallery">Gallery</NavLink></Button>
           </div>
           <br/>
           <Switch>

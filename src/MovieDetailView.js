@@ -7,10 +7,7 @@ class MovieDetailView extends Component {
   render() {
     let imageUrl;
     const noMovie = this.props.movie.length === 0;
-    if (noMovie || window.currentMovies.currentMovieId !== this.props.id) {
-      this.props.getMovie();
-      window.currentMovies.currentMovieId = this.props.id;
-    }else {
+    if (!noMovie) {
       imageUrl = `https://image.tmdb.org/t/p/w300_and_h450_bestv2${this.props.movie.poster_path}`;
     }
     return(

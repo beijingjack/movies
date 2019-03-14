@@ -37,7 +37,6 @@ class Gallery extends Component{
   };
 
   render() {
-    window.currentMovies.movies = this.state.displayedMovies;
     return(
       <div>
         <div className="container">
