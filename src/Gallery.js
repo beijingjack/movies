@@ -30,6 +30,10 @@ class Gallery extends Component{
     this.setState({allMovies: movies, displayedMovies:movies});
   }
 
+  componentDidMount() {
+    this.popularMovies();
+  }
+
   filterGenre = (i) => {
     let all = this.state.allMovies;
     let movies = all.filter(movie => movie.genre_ids.includes(i));
